@@ -7,11 +7,20 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "start-storybook -p 6006 ./public",
-    "build": "parcel build"
+    "clean:icons": "rimraf src/icons/components/*",
+    "icons:add-keyof-type": "find src/icons/components ! -name 'index.tsx' -type f -exec sed -i'' -e 's/: Colors/: keyof Colors/g' {} +",
+    "icons:remove-sed-files": "find src/icons/components -type f -name '*tsx-e' -exec rm -rf {} +",
+    "build": "parcel build",
+    "build:icons": "yarn clean:icons && yarn svgr ./src/icons/svgs --typescript --template ./src/icons/svgrtemplate.js --ext tsx --out-dir ./src/icons/components && yarn icons:add-keyof-type && yarn icons:remove-sed-files"
   },
   "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-navigation-menu": "^1.1.1",
     "@stitches/react": "^1.2.8",
+    "@svgr/cli": "^6.5.1",
+    "install": "^0.13.0",
     "next": "13.0.0",
+    "npm": "^9.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

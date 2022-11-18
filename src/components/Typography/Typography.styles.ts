@@ -72,11 +72,11 @@ export const SC_Typography = styled("p", {
           lineHeight: "$desktopH4",
         },
       },
-      paragraph: {
-        fontSize: "$paragraph",
-        fontFamily: "$paragraph",
-        fontWeight: "$paragraph",
-        lineHeight: "$paragraph",
+      body: {
+        fontSize: "$body",
+        fontFamily: "$body",
+        fontWeight: "$body",
+        lineHeight: "$body",
       },
       timer: {
         fontSize: "$timer",

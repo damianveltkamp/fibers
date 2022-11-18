@@ -16,6 +16,7 @@ export const parameters: Parameters = {
       date: /Date$/,
     },
   },
+  layout: "fullscreen",
   backgrounds: {
     default: "DVBlue",
     values: [

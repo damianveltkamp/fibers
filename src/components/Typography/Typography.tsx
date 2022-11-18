@@ -4,14 +4,14 @@ import { SC_Typography } from "./Typography.styles";
 
 export type TypographyProps = HTMLAttributes<HTMLElement> & {
   as?: "h1" | "h2" | "h3" | "h4" | "p" | "time";
-  typography?: "h1" | "h2" | "h3" | "h4" | "paragraph" | "timer" | "tag";
+  typography?: "h1" | "h2" | "h3" | "h4" | "body" | "timer" | "tag";
   variant?: "white" | "black" | "DVOrange" | "DVBlue";
   css?: CSS;
 };
 
 export const Typography = ({
   as = "p",
-  typography = "paragraph",
+  typography = "body",
   variant = "white",
   children,
   css,

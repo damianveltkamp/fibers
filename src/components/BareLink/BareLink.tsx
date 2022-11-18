@@ -3,7 +3,7 @@ import { HTMLAttributes } from "react";
 
 import { SC_BareLink } from "./BareLink.styles";
 
-export type BareLinkProps = HTMLAttributes<HTMLLinkElement> & {
+export type BareLinkProps = HTMLAttributes<HTMLAnchorElement> & {
   href: string;
   isExternal?: boolean;
 };
@@ -11,16 +11,16 @@ export type BareLinkProps = HTMLAttributes<HTMLLinkElement> & {
 export const BareLink = ({
   href,
   children,
-  className,
   isExternal,
+  ...props
 }: BareLinkProps) => {
   return isExternal ? (
-    <SC_BareLink href={href} className={className}>
+    <SC_BareLink href={href} {...props}>
       {children}
     </SC_BareLink>
   ) : (
     <NextLink href={href} passHref={true}>
-      <SC_BareLink className={className}>{children}</SC_BareLink>
+      <SC_BareLink {...props}> {children}</SC_BareLink>
     </NextLink>
   );
 };
